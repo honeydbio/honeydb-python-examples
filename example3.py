@@ -8,7 +8,5 @@ API_KEY = os.environ["HONEYDB_API_KEY"]
 
 honeydb = api.Client(API_ID, API_KEY)
 
-TOP_COUNT = 10
-
 for service in honeydb.services():
     print(f"{service['service']} ({service['count']})")
