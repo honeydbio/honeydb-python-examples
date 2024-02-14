@@ -26,4 +26,8 @@ while from_id != 0:
 
     print(sensor_data[1]["from_id"])
 
+    for event in sensor_data[0]["data"]:
+        if event["event"] == "RX" and event["service"] == "HTTP":
+            print("{}".format(event["data"].decode("hex")))
+
     from_id = int(sensor_data[1]["from_id"])
